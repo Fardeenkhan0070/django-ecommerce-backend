@@ -5,8 +5,7 @@ A RESTful API for a small e-commerce system built with Django and Django REST Fr
 ## Live Demo
 
 - **Deployed URL:** `[Your deployed URL here]`
-- **API Documentation:** `[Your deployed URL]/api/`
-- **Admin Panel:** `[Your deployed URL]/admin/`
+
 
 ## 📋 Table of Contents
 
