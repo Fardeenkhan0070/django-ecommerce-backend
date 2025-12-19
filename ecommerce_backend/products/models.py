@@ -1,18 +1,9 @@
-"""
-File: products/models.py
-Purpose: Product model for e-commerce system
-"""
-
 from django.db import models
 from django.core.validators import MinValueValidator
 from decimal import Decimal
 
 
 class Product(models.Model):
-    """
-    Product model representing items available for purchase.
-    Includes name, description, price, and stock quantity.
-    """
     name = models.CharField(
         max_length=255,
         db_index=True,
@@ -54,14 +45,10 @@ class Product(models.Model):
         return self.name
     
     def is_in_stock(self):
-        """Check if product is available in stock"""
+        
         return self.stock > 0
     
     def reduce_stock(self, quantity):
-        """
-        Reduce stock by given quantity.
-        Returns True if successful, False if insufficient stock.
-        """
         if self.stock >= quantity:
             self.stock -= quantity
             self.save(update_fields=['stock'])

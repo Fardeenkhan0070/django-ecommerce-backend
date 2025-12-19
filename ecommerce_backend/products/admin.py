@@ -1,17 +1,9 @@
-"""
-File: products/admin.py
-Purpose: Django admin configuration for Product model
-"""
-
 from django.contrib import admin
 from .models import Product
 
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    """
-    Admin interface for Product model.
-    """
     list_display = ['id', 'name', 'price', 'stock', 'is_in_stock', 'created_at']
     list_filter = ['created_at', 'updated_at']
     search_fields = ['name', 'description']
