@@ -9,7 +9,6 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         # Get credentials from environment variables
-        username = os.environ.get('DJANGO_SUPERUSER_USERNAME', 'admin')
         email = os.environ.get('DJANGO_SUPERUSER_EMAIL', 'admin@example.com')
         password = os.environ.get('DJANGO_SUPERUSER_PASSWORD')
 
@@ -19,20 +18,19 @@ class Command(BaseCommand):
             )
             return
 
-        # Check if superuser already exists
-        if User.objects.filter(username=username).exists():
+        # Check if superuser already exists (using email, not username)
+        if User.objects.filter(email=email).exists():
             self.stdout.write(
-                self.style.WARNING(f'Superuser "{username}" already exists. Skipping creation.')
+                self.style.WARNING(f'Superuser with email "{email}" already exists. Skipping creation.')
             )
             return
 
-        # Create superuser
+        # Create superuser (no username needed!)
         User.objects.create_superuser(
-            username=username,
             email=email,
             password=password
         )
         
         self.stdout.write(
-            self.style.SUCCESS(f'Superuser "{username}" created successfully!')
+            self.style.SUCCESS(f'Superuser "{email}" created successfully!')
         )
