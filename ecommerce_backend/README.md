@@ -2,10 +2,6 @@
 
 A RESTful API for a small e-commerce system built with Django and Django REST Framework. This project demonstrates backend development skills including database modeling, API design, authentication, authorization, and business logic implementation.
 
-##  Live Demo
-
-- **Deployed URL:** `[Your deployed URL here]`
-- 
 ## Table of Contents
 
 - [Features](#features)
@@ -35,13 +31,6 @@ A RESTful API for a small e-commerce system built with Django and Django REST Fr
 - ✅ **Filtering & Search**: Product filtering by price/stock, search by name
 - ✅ **Pagination**: Paginated responses for products and orders
 - ✅ **Query Optimization**: Uses `select_related` and `prefetch_related`
-
----
-
-
-
----
-
 
 ---
 
@@ -262,8 +251,6 @@ POST /api/auth/login/
 
 ---
 
-
-
 ## License
 
 This project is created for educational/assessment purposes.
@@ -275,8 +262,6 @@ This project is created for educational/assessment purposes.
 **Fardeen Khan**
 - Email: fardeenmahar0070@gmail.com
 
-
----
 
 
 
