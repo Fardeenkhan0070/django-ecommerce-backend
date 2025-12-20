@@ -118,10 +118,7 @@ class OrderCreateSerializer(serializers.Serializer):
     
     @transaction.atomic
     def create(self, validated_data):
-        """
-        Create order with items and deduct stock.
-        Uses transaction to ensure atomicity (all-or-nothing).
-        """
+       
         items_data = validated_data.pop('items')
         user = self.context['request'].user
         
@@ -166,11 +163,7 @@ class OrderCreateSerializer(serializers.Serializer):
 
 
 class OrderCancelSerializer(serializers.Serializer):
-    """
-    Serializer for cancelling orders (BONUS FEATURE).
-    Restores stock when order is cancelled.
-    """
-    
+  
     @transaction.atomic
     def update(self, instance, validated_data):
         """

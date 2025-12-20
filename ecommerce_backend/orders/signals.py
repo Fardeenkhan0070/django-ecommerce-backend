@@ -1,7 +1,3 @@
-"""
-File: orders/signals.py
-Purpose: Django signals for order notifications (BONUS FEATURE)
-"""
 
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -10,18 +6,7 @@ from .models import Order
 
 @receiver(post_save, sender=Order)
 def order_notification(sender, instance, created, **kwargs):
-    """
-    Signal handler to send notification when order is created or updated.
-    
-    In a real application, this would:
-    - Send email to customer
-    - Send email to admin
-    - Send SMS notification
-    - Create notification record
-    - Trigger webhook
-    
-    For this test, we simulate by printing to console.
-    """
+
     if created:
         # Order was just created
         print(f"\n{'='*60}")

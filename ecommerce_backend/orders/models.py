@@ -11,10 +11,6 @@ from products.models import Product
 
 
 class Order(models.Model):
-    """
-    Order model representing a customer's purchase.
-    Contains order status, total amount, and references to user.
-    """
     
     STATUS_CHOICES = [
         ('pending', 'Pending'),
@@ -74,11 +70,7 @@ class Order(models.Model):
 
 
 class OrderItem(models.Model):
-    """
-    OrderItem model representing individual products in an order.
-    This is a through table connecting Order and Product.
-    """
-    
+   
     order = models.ForeignKey(
         Order,
         on_delete=models.CASCADE,

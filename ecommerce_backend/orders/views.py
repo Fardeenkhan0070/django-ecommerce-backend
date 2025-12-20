@@ -1,7 +1,3 @@
-"""
-File: orders/views.py
-Purpose: ViewSet for handling Order operations
-"""
 
 from rest_framework import viewsets, status
 from rest_framework.decorators import action
