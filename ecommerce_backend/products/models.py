@@ -56,6 +56,6 @@ class Product(models.Model):
         return False
     
     def increase_stock(self, quantity):
-        """Increase stock by given quantity (for order cancellation)"""
+       
         self.stock += quantity
         self.save(update_fields=['stock'])

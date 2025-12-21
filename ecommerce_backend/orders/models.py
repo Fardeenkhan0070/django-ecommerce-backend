@@ -1,7 +1,3 @@
-"""
-File: orders/models.py
-Purpose: Order and OrderItem models for e-commerce system
-"""
 
 from django.db import models
 from django.conf import settings
